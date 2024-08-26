@@ -1,0 +1,43 @@
+﻿<Window x:Class="Noter.Windows.FolderBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Noter.Windows"
+        xmlns:attach="clr-namespace:Noter.Models.Attachments"
+        mc:Ignorable="d" x:Name="this"
+        WindowStartupLocation="CenterScreen"
+        Title="FolderBrowser" Height="450" Width="800" Style="{StaticResource MyDesign}">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding ElementName=this, Path=ESCCMD}" Key="Esc"/>
+    </Window.InputBindings>
+    <Window.Resources>
+        <Style TargetType="{x:Type Rectangle}">
+            <Setter Property="Height" Value="4"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="50" Height="20" Content="GO UP" Style="{x:Null}" BorderBrush="Black" BorderThickness="1" Click="Button_Click"></Button>
+            <Label VerticalAlignment="Center">PATH: </Label>
+            <TextBox x:Name="tbPath" Width="500" Height="20" KeyDown="TextBox_KeyDown" attach:MyAttachments.SelectOnEntry="True" ></TextBox>
+            <Button Width="50" Height="20" Content="Select" Style="{x:Null}" BorderBrush="Black" BorderThickness="1" Click="Button2_Click"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Rectangle Fill="#222222" Width="auto"></Rectangle>
+            <Rectangle Fill="#FFFFFF" Width="auto"></Rectangle>
+            <Rectangle Fill="#222222" Width="auto"></Rectangle>
+            <Rectangle Fill="#FFFFFF" Width="auto"></Rectangle>
+            <Rectangle Fill="#222222" Width="auto"></Rectangle>
+        </StackPanel>
+        <ScrollViewer Grid.Row="2">
+            <Grid x:Name="dirGrid">
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,250 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Noter"
+                    xmlns:attach="clr-namespace:Noter.Models.Attachments"
+                    xmlns:cc="clr-namespace:Noter.Models.MyControls">
+
+<!--
+    <Style TargetType="{x:Type cc:ColCol}">
+        <Setter Property="cc:ColCol.Collapsed" Value="True"/>
+        <Setter Property="ItemsControl.Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cc:ColCol}">
+                    <StackPanel Orientation="Horizontal">
+                        <Button>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Foreground" Value="{StaticResource Light}"/>
+                                    <Setter Property="local:MyAttachments.Pressed" Value="False"/>
+                                    <Setter Property="Width" Value="20"/>
+                                    <Setter Property="Height" Value="20"/>
+                                    <Setter Property="Content" Value="v"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type cc:ColCol}},Path=(cc:ColCol.Collapsed)}" Value="True">
+                                            <Setter Property="Content" Value="^"/>
+                                            <Setter Property="Background" Value="{StaticResource Button_Active_FG}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Label Content="{TemplateBinding cc:ColCol.Header}">
+                            <Label.Style>
+                                <Style TargetType="{x:Type Label}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Foreground" Value="{StaticResource Light}"/>
+                                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                    <Setter Property="Content" Value="Expand"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type cc:ColCol}},Path=(cc:ColCol.Collapsed)}" Value="True">
+                                            <Setter Property="Content" Value="Collapse"/>
+                                            <Setter Property="Background" Value="{StaticResource Button_Active_FG}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                        <ItemsPresenter/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    -->
+
+    <!--
+    <Style TargetType="{x:Type UserControl}">
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+    -->
+
+    <Style TargetType="{x:Type cc:Resizer}">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource SH_Light}"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cc:Resizer}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="attach:MyAttachments.Active" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource Button_Active_FG}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style TargetType="{x:Type cc:ResizableContainer}">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource SH_Light}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SH_Dark}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cc:ResizableContainer}">
+                    <Grid x:Name="g1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <ContentPresenter Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type cc:ClosableC}">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource SH_Light}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cc:ClosableC}">
+                    <Border 
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        MinWidth="{TemplateBinding MinWidth}"
+                        MaxWidth="{TemplateBinding MaxWidth}"
+                        MinHeight="{TemplateBinding MinHeight}"
+                        MaxHeight="{TemplateBinding MaxHeight}"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        >
+                        <Grid x:Name="grid">
+                            <Button x:Name="button" 
+                                    ToolTip="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(cc:ClosableC.KeyName)}" 
+                                    Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(cc:ClosableC.KeyName)}" 
+                                    FontSize="{TemplateBinding FontSize}">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type cc:ClosableC}}, Path=(attach:MyAttachments.Pressed)}" Value="True">
+                                                <Setter Property="attach:MyAttachments.Pressed" Value="True"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+<!--
+        <Setter Property="IsTabStop" Value="False"/>
+    
+    
+    
+    
+    
+    -->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Control}}" x:Key="ColColButton">
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Content" Value="v"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SL_Light}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=containerHolder,Path=Visibility}" Value="Visible">
+                <Setter Property="Content" Value="^"/>
+                <Setter Property="Foreground" Value="{StaticResource Button_Active_FG}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Label}" x:Key="ColColLabel">
+        <Setter Property="Content" Value="Expand"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=containerHolder,Path=Visibility}" Value="Visible">
+                <Setter Property="Content" Value="Collapse"/>
+                <Setter Property="Foreground" Value="{StaticResource Button_Active_FG}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type cc:ColCol}" >
+        <Setter Property="Background" Value="{StaticResource BG_ColColC}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SL_Light}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="Margin" Value="5 5 5 5"/>
+        <Setter Property="ItemsControl.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cc:ColCol}">
+                    <Grid x:Name="g1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="g2" Height="25" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="25"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="b1" Background="Transparent" Foreground="{StaticResource Light}" Style="{StaticResource ColColButton}"/>
+                            <Label x:Name="l1" HorizontalAlignment="Stretch" Grid.Column="1" Background="Transparent" Foreground="{StaticResource Light}" VerticalAlignment="Center" Style="{StaticResource ColColLabel}"/>
+                            <Button x:Name="dragger" Grid.Column="3" IsTabStop="False" Style="{StaticResource ImgButton}" HorizontalAlignment="Right" Height="25" Width="25" Content="{StaticResource dragPNG}" attach:DragDropA.AllowCDrag="True"/>
+                        </Grid>
+                        <ScrollViewer x:Name="containerHolder" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                            <StackPanel>
+                                <StackPanel x:Name="container"/>
+                                <Button x:Name="b2" Style="{StaticResource ImgButton}" HorizontalAlignment="Right" Margin="10" Height="20" Width="20" Content="{StaticResource plusPNG}"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsHitTestVisible" Value="False">
+                    <Setter Property="Background" Value="{StaticResource L_Dark}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource SH_Dark}"/>
+                </Trigger>
+                <Trigger Property="attach:MyAttachments.Active" Value="True">
+                    <!--
+                <Setter Property="Background" Value="{StaticResource BG_BlueG}"/>
+                -->
+                    <Setter Property="BorderBrush" Value="{StaticResource Button_Active_FG}"/>
+                </Trigger>
+            </Style.Triggers>
+    </Style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <Style TargetType="{x:Type cc:TagC}" BasedOn="{StaticResource {x:Type cc:ClosableC}}">
+    </Style>
+</ResourceDictionary>

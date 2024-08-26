@@ -1,0 +1,79 @@
+﻿<local:BaseConC x:Class="Noter.UserControls.ColColC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Noter.UserControls"
+             xmlns:attach="clr-namespace:Noter.Models.Attachments"
+             xmlns:conver="clr-namespace:Noter.Models.Converters"
+             xmlns:uc="clr-namespace:Noter.Models.MyControls"
+             mc:Ignorable="d" x:Name="this"
+             d:DesignHeight="100" d:DesignWidth="200"
+             attach:DragDropA.AllowCDrop="True"
+             >
+    <!--
+                    xmlns:attach="clr-namespace:Searcher.Models.Attachments"
+            -->
+<Grid x:Name="g1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Height="25" HorizontalAlignment="Stretch" VerticalAlignment="Top" MouseDown="Grid_Click" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Button Click="Button_Click" Background="Transparent" Foreground="{Binding ElementName=this,Path=Foreground}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Control}}">
+                        <Setter Property="Width" Value="25"/>
+                        <Setter Property="Height" Value="25"/>
+                        <Setter Property="Content" Value="v"/>
+                        <Setter Property="ToolTip" Value="Expand"/>
+                        <Setter Property="BorderBrush" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Foreground}"/>
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=containerHolder,Path=Visibility}" Value="Visible">
+                                <Setter Property="Content" Value="^"/>
+                                <Setter Property="ToolTip" Value="Collapse"/>
+                                <Setter Property="Foreground" Value="{StaticResource Button_Active_FG}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Label HorizontalAlignment="Stretch" Focusable="False" Grid.Column="1" Background="Transparent" Foreground="{Binding ElementName=this,Path=Foreground}" VerticalAlignment="Center">
+                <Label.Style>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="Content" Value="Expand"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=containerHolder,Path=Visibility}" Value="Visible">
+                                <Setter Property="Content" Value="Collapse"/>
+                                <Setter Property="Foreground" Value="{StaticResource Button_Active_FG}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <Label Foreground="{Binding ElementName=this, Path=Foreground}" Grid.Column="2" Focusable="False" HorizontalAlignment="Center" Content="{Binding Header,ElementName=this, Mode=OneWay}"/>
+            <Button Grid.Column="3" Style="{StaticResource ImgButton}" HorizontalAlignment="Right" Height="25" Width="25" Content="{StaticResource plusPNG}" Click="Add_Button_Click"/>
+            <Button x:Name="settings" Grid.Column="4" Style="{StaticResource ImgButton}" HorizontalAlignment="Right" Height="25" Width="25" Content="{StaticResource settingsPNG}" Click="settings_Click"/>
+            <Button x:Name="dragger" Grid.Column="5" IsTabStop="False" Style="{StaticResource ImgButton}" HorizontalAlignment="Right" Height="25" Width="25" Content="{StaticResource dragPNG}" attach:DragDropA.AllowCDrag="True"/>
+        </Grid>
+        <ScrollViewer x:Name="containerHolder" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <StackPanel x:Name="container" />
+            </StackPanel>
+        </ScrollViewer>
+        <!--
+            <GridSplitter Grid.Row="2" Background="Black" ShowsPreview="true" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" ResizeDirection="Rows"/>
+            -->
+    </Grid>
+</local:BaseConC>

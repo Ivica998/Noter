@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="UserControls\ColColC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\EntryControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\LinkCon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\SearchControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\SourceControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\TextBoxCon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\ElementCreator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\EntryCreator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\EntryDestroyer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\FolderBrowser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Preferences.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\TagCreator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\TagDestroyer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\TagSettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\TestZone.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\TextSettingsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Borders.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Content.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Controls.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Converters.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\CustomControls.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\FocusVisual.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Labels.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MenuItems.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Menus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Others.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Panels.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Texts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Toolbars.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Windows.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\ColColC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\EntryControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\LinkCon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\SearchControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\SourceControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\TextBoxCon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\ElementCreator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\EntryCreator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\EntryDestroyer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\FolderBrowser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Preferences.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\TagCreator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\TagDestroyer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\TagSettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\TestZone.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\TextSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

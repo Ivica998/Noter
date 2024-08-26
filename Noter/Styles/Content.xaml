@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Image x:Shared="False"  Source="../Images/plus.png" x:Key="plusPNG"/>
+    <Image x:Shared="False"  Source="../Images/save.png" x:Key="savePNG"/>
+    <Image x:Shared="False"  Source="../Images/drag2.png" x:Key="dragPNG"/>
+    <Image x:Shared="False"  Source="../Images/settings.png" x:Key="settingsPNG"/>
+    <Image x:Shared="False"  Source="../Images/window4.png" x:Key="dropPNG" Stretch="Fill"/>
+</ResourceDictionary>

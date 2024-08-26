@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}" >
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle StrokeThickness="2"
+          Stroke="{StaticResource Button_Active_FG}"
+          SnapsToDevicePixels="true"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Control}">
+        <Setter Property="FocusVisualStyle"
+            Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource {x:Type ScrollViewer}}" >
+        <Setter Property="FocusVisualStyle"
+            Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type Grid}" >
+        <Setter Property="FocusVisualStyle"
+            Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type StackPanel}" >
+        <Setter Property="FocusVisualStyle"
+            Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="True"/>
+        <Setter Property="FocusVisualStyle"
+            Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+    </Style>
+
+</ResourceDictionary>

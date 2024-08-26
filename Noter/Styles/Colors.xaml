@@ -1,0 +1,122 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!-- MenuItem colors
+    <SolidColorBrush x:Key="Menu.Static.Background" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="Menu.Static.Border" Color="#FF999999"/>
+    <SolidColorBrush x:Key="Menu.Static.Foreground" Color="#FF212121"/>
+    <SolidColorBrush x:Key="Menu.Static.Separator" Color="#FFD7D7D7"/>
+    <SolidColorBrush x:Key="Menu.Disabled.Foreground" Color="#FF707070"/>
+    <SolidColorBrush x:Key="MenuItem.Selected.Background" Color="#3D26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Selected.Border" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Background" Color="#3D26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Border" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Background" Color="#0A000000"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Border" Color="#21000000"/>
+    -->
+    <SolidColorBrush x:Key="Menu.Static.Background" Color="#FF333333"/>
+    <SolidColorBrush x:Key="Menu.Static.Border" Color="#FFBBBBBB"/>
+    <SolidColorBrush x:Key="Menu.Static.Foreground" Color="#FFEEEEEE"/>
+    <SolidColorBrush x:Key="Menu.Static.Separator" Color="#8800DDFF"/>
+    <SolidColorBrush x:Key="Menu.Disabled.Foreground" Color="#88EEEEEE"/>
+    <SolidColorBrush x:Key="MenuItem.Selected.Background" Color="#FF004455"/>
+    <SolidColorBrush x:Key="MenuItem.Selected.Border" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Background" Color="#3D26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Border" Color="#FF26A0DA"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Background" Color="#22000000"/>
+    <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Border" Color="#33000000"/>
+
+
+    <SolidColorBrush x:Key="SH_Dark" Color="#222222"/>
+    <SolidColorBrush x:Key="H_Dark" Color="#333333"/>
+    <SolidColorBrush x:Key="Dark" Color="#444444"/>
+    <SolidColorBrush x:Key="L_Dark" Color="#555555"/>
+    <SolidColorBrush x:Key="SL_Dark" Color="#666666"/>
+    <SolidColorBrush x:Key="SH_Light" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="H_Light" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="Light" Color="#CCCCCC"/>
+    <SolidColorBrush x:Key="L_Light" Color="#BBBBBB"/>
+    <SolidColorBrush x:Key="SL_Light" Color="#AAAAAA"/>
+    <SolidColorBrush x:Key="Button_Hovered_BG" Color="#001708"/>
+    <SolidColorBrush x:Key="Button_Hovered_FG" Color="#02fa5d"/>
+    <SolidColorBrush x:Key="Button_Disabled_BG" Color="#150002"/>
+    <SolidColorBrush x:Key="Button_Disabled_FG" Color="#FFFF0046"/>
+    <SolidColorBrush x:Key="Button_Active_BG" Color="#001515"/>
+    <SolidColorBrush x:Key="Button_Active_FG" Color="#00FFFF"/>
+    <SolidColorBrush x:Key="Button_Hovered_OverLay" Color="#3002fa5d"/>
+    <SolidColorBrush x:Key="DropDummy_BG" Color="#3002fa5d"/>
+    <SolidColorBrush x:Key="DropDummy_FG" Color="#3002fa5d"/>
+    <SolidColorBrush x:Key="BG_ColColC" Color="#AA433336"/>
+    <LinearGradientBrush x:Key="Button_Clicked_Border" EndPoint="1,0.5" StartPoint="0,0.5">
+        <GradientStop Color="#FF000000"/>
+        <GradientStop Color="#FF8000FF" Offset="0.2"/>
+        <GradientStop Color="Red" Offset="0.4"/>
+        <GradientStop Color="#FFFFF000" Offset="0.6"/>
+        <GradientStop Color="#FF00FFE8" Offset="0.8"/>
+        <GradientStop Color="#FF000000" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_PinkG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF333333"/>
+        <GradientStop Color="#FF433336" Offset="0.2"/>
+        <GradientStop Color="#FF533338" Offset="0.5"/>
+        <GradientStop Color="#FF433336" Offset="0.8"/>
+        <GradientStop Color="#FF333333" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_BlueG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF000000"/>
+        <GradientStop Color="#FF001515" Offset="0.1"/>
+        <GradientStop Color="#FF002020" Offset="0.1"/>
+        <GradientStop Color="#FF001515" Offset="0.9"/>
+        <GradientStop Color="#FF000000" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_GreenG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#80000000"/>
+        <GradientStop Color="#90001708" Offset="0.2"/>
+        <GradientStop Color="#aa00220a" Offset="0.5"/>
+        <GradientStop Color="#90001708" Offset="0.8"/>
+        <GradientStop Color="#80000000" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_YellowG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF111111"/>
+        <GradientStop Color="#FF212111" Offset="0.1"/>
+        <GradientStop Color="#FF313111" Offset="0.5"/>
+        <GradientStop Color="#FF212111" Offset="0.9"/>
+        <GradientStop Color="#FF111111" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_PurpleG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#108844ff"/>
+        <GradientStop Color="#128844ff" Offset="0.1"/>
+        <GradientStop Color="#148844ff" Offset="0.5"/>
+        <GradientStop Color="#128844ff" Offset="0.7"/>
+        <GradientStop Color="#108844ff" Offset="1"/>
+    </LinearGradientBrush>
+    <!--
+    <LinearGradientBrush x:Key="BG_YellowG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#10FFFF00"/>
+        <GradientStop Color="#12FFFF00" Offset="0.1"/>
+        <GradientStop Color="#14FFFF00" Offset="0.5"/>
+        <GradientStop Color="#12FFFF00" Offset="0.9"/>
+        <GradientStop Color="#10FFFF00" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_BlueG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF333333"/>
+        <GradientStop Color="#FF334343" Offset="0.2"/>
+        <GradientStop Color="#FF334343" Offset="0.8"/>
+        <GradientStop Color="#FF333333" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BG_GreenG" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF333333"/>
+        <GradientStop Color="#FF333933" Offset="0.2"/>
+        <GradientStop Color="#FF333933" Offset="0.8"/>
+        <GradientStop Color="#FF333333" Offset="1"/>
+    </LinearGradientBrush>
+        <GradientStop Color="#FF335353" Offset="0.5"/>
+        <GradientStop Color="#FF550000" Offset="0.5"/>
+        <GradientStop Color="#FF555500" Offset="0.6"/>
+        <GradientStop Color="#FF005555" Offset="0.8"/>
+    -->
+
+
+
+</ResourceDictionary>

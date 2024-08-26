@@ -1,0 +1,32 @@
+﻿<Window x:Class="Noter.Windows.EntryDestroyer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Noter.Windows"
+        mc:Ignorable="d" x:Name="this"
+        WindowStartupLocation="CenterScreen"
+        Title="EntryDestroyer" Height="180" Width="250" ResizeMode="NoResize"
+        >
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding ElementName=this, Path=ESCCMD}" Key="Esc"/>
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="28" >Delete Entry</Label>
+        <ComboBox Grid.Row="1" x:Name ="cbScheme" IsEditable="True" Width="220" 
+                  ItemsSource="{Binding PrevEntries.List}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectionChanged="cbObj_SelectionChanged"/>
+        <TextBox Grid.Row="2" x:Name="reqText" Background="#222222" HorizontalAlignment="Center" Margin="0,8" Height="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <Grid Grid.Row="3" Width="220">
+            <Button Background="#222222" Width="50" Content=" Delete " HorizontalAlignment="Right" VerticalAlignment="Top" Click="Delete_Button_Click"/>
+            <Label x:Name="l1" Foreground="#FF0055" FontSize="10" Padding="0,0,0,0" Width="160" HorizontalContentAlignment="Left" Content="" VerticalAlignment="Center" HorizontalAlignment="Left" Height="18"/>
+        </Grid>
+        <Button Grid.Row="4" Background="#222222" Width="50" Padding="3 0 3 0" Margin="0,0,15,10" Content=" Exit " HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Exit_Button_Click"/>
+    </Grid>
+</Window>

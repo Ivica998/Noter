@@ -1,0 +1,95 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Noter"
+                    xmlns:attach="clr-namespace:Noter.Models.Attachments"
+                    
+                    >
+    <!--
+    -->
+
+    <Style TargetType="{x:Type Button}" x:Key="BaseButton" BasedOn="{StaticResource {x:Type Control}}">
+        <Setter Property="Background" Value="{StaticResource SH_Dark}"/>
+        <Setter Property="Foreground" Value="{StaticResource H_Light}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#000000"/>
+        <Setter Property="attach:MyAttachments.Pressed" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Border BorderThickness="2" IsHitTestVisible="False">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Button}}, Path=IsPressed}" Value="true">
+                                                <Setter Property="BorderBrush" Value="{StaticResource Button_Clicked_Border}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <!--
+                            <Rectangle Fill="{StaticResource Button_Hovered_OverLay}" Visibility="{TemplateBinding Property=IsMouseOver, Converter={StaticResource Bool_Vis_Hid_Converter}}" IsHitTestVisible="False"/>
+                            -->
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Button_Hovered_BG}"/>
+                <Setter Property="Foreground" Value="{StaticResource Button_Hovered_FG}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource Button_Hovered_FG}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Button_Disabled_BG}"/>
+                <Setter Property="Foreground" Value="{StaticResource Button_Disabled_FG}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource Button_Disabled_FG}"/>
+            </Trigger>
+            <Trigger Property="attach:MyAttachments.Pressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Button_Active_BG}"/>
+                <Setter Property="Foreground" Value="{StaticResource Button_Active_FG}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource Button_Active_FG}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}">
+    </Style>
+    
+    <Style TargetType="{x:Type Button}" x:Key="ImgButton" BasedOn="{StaticResource {x:Type Control}}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SH_Dark}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Border BorderBrush="{StaticResource Button_Active_FG}" IsHitTestVisible="False">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Button}}, Path=IsPressed}" Value="true">
+                                                <Setter Property="BorderThickness" Value="1.5"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Rectangle Fill="#3000ffff" Visibility="{TemplateBinding Property=IsMouseOver, Converter={StaticResource Bool_Vis_Hid_Converter}}" IsHitTestVisible="False"/>
+                            <!--
+                            -->
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Noter"
+                    xmlns:conver="clr-namespace:Noter.Models.Converters"
+                    xmlns:uc="clr-namespace:Noter.UserControls"
+                    >
+
+    <conver:BoolToVisibilityConverter x:Key="Bool_Vis_Hid_Converter" TrueValue="Visible" FalseValue="Hidden" />
+    <conver:BoolToVisibilityConverter x:Key="Bool_Vis_Col_Converter" TrueValue="Visible" FalseValue="Collapsed" />
+    <conver:BoolToVisibilityConverter x:Key="Bool_Col_Vis_Converter" TrueValue="Collapsed" FalseValue="Visible" />
+    <conver:ChangBrushConv x:Key="BrushFix"
+                                                       >
+                           <!--
+                                            OldValue="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=BorderBrush, Mode=OneWay}"
+                                            Owner="{Binding RelativeSource={x:Static RelativeSource.Self}, Mode=OneWay}"
+                                                    OldValue="{Binding BorderBrush}"
+                                                    Owner="{Binding}"
+                                                       Owner="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=uc:ColColC}, Mode=OneTime}"
+                                                       OldValue="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=uc:ColColC}, Path=BorderBrush, Mode=OneWay}"
+        -->
+    </conver:ChangBrushConv>
+    <!--
+    -->
+</ResourceDictionary>

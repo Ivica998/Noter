@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App_Data\Folder.png" />
+    <None Remove="App_Data\image6.png" />
+    <None Remove="Images\drag.png" />
+    <None Remove="Images\drag2.png" />
+    <None Remove="Images\iks.png" />
+    <None Remove="Images\iks2.png" />
+    <None Remove="Images\plus.png" />
+    <None Remove="Images\save.png" />
+    <None Remove="Images\settings.png" />
+    <None Remove="Images\window.png" />
+    <None Remove="Images\window2.png" />
+    <None Remove="Images\window3.png" />
+    <None Remove="Images\window4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\drag.png" />
+    <Resource Include="Images\drag2.png" />
+    <Resource Include="Images\Folder.png" />
+    <Resource Include="App_Data\image6.png" />
+    <Resource Include="Images\iks.png" />
+    <Resource Include="Images\iks2.png" />
+    <Resource Include="Images\plus.png" />
+    <Resource Include="Images\save.png" />
+    <Resource Include="Images\settings.png" />
+    <Resource Include="Images\window.png" />
+    <Resource Include="Images\window2.png" />
+    <Resource Include="Images\window3.png" />
+    <Resource Include="Images\window4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Styles\Converters.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Controls.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Colors.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Fonts.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>   
+    <Page Update="Styles\Texts.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Labels.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Menus.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\MenuItems.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Toolbars.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Windows.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Buttons.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Panels.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Content.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\CustomControls.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
